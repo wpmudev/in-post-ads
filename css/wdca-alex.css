@@ -1,0 +1,101 @@
+.wdca_custom_ad {
+	position:relative;
+	background-color:#eef1fa;
+	width:640px;
+	min-height:100px;
+	border:1px solid #d0d8e3;
+}
+
+.wdca_ad_info {
+	margin:25px;
+	position:relative;
+	width:283px;
+	min-height:100px;
+}
+
+.wdca_ad_featured {
+	font-size:11pt;
+	font-weight:bold;
+	color:#7a8c98;
+	margin-top:-3px;
+}
+
+.wdca_ad_title {
+	font-size:18pt;
+	color:#7a8c98;
+	margin-top:-5px;
+}
+
+.wdca_ad_title a{
+	color:#14afe9;
+	text-decoration:none;
+}
+
+.wdca_ad_body_full {
+	font-size:11pt;
+	color:#04243d;
+	line-height: 22px;
+}
+
+.wdca_ad_body_full a{
+	color:#04243d;
+}
+
+.wdca_ad_thumb {
+	position:absolute;
+	top:25px;
+	right:25px;
+	width:280px;
+	text-align:right;
+}
+
+.wdca_ad_button {
+	position:absolute;
+	top:200px;
+	right:25px;
+	width:280px;
+	text-align:right;
+}
+
+.wdca_ad_cta {
+	font-size:17px;
+	font-family:Arial;
+	font-weight:normal;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:0px solid #ffffff;
+	padding:11px 25px;
+	text-decoration:none;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(5%, #14b0e9), color-stop(100%, #14b0e9) );
+	background:-moz-linear-gradient( center top, #14b0e9 5%, #14b0e9 100% );
+	background:-ms-linear-gradient( top, #14b0e9 5%, #14b0e9 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#14b0e9', endColorstr='#14b0e9');
+	background-color:#14b0e9;
+	color:#ffffff;
+	display:inline-block;
+}
+
+.wdca_ad_cta:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(5%, #14b0e9), color-stop(100%, #14b0e9) );
+	background:-moz-linear-gradient( center top, #14b0e9 5%, #14b0e9 100% );
+	background:-ms-linear-gradient( top, #14b0e9 5%, #14b0e9 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#14b0e9', endColorstr='#14b0e9');
+	background-color:#14b0e9;
+}
+
+.wdca_ad_cta:active {
+	position:relative;
+	top:1px;
+}
+
+.wdca_ad_ribbon {
+	position:absolute;
+	top:-10px;
+	right:-10px;
+	z-index:100;
+}
+.wdca_ad_ribbon img {
+	border: none;
+	box-shadow: none;
+}

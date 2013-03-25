@@ -1,0 +1,33 @@
+@CHARSET "UTF-8";
+
+/**
+ * Auto-placed Ads start initially hidden
+ */
+.wdca_not_placed {
+	display: none;
+}
+
+.wdca_default, .wdca_large {
+	width: 95%;
+	overflow: none;
+}
+
+.wdca_medium {
+	width: 48%;
+	overflow: none;
+}
+
+.wdca_small {
+	width: 23%;
+	overflow: none;
+}
+
+.wdca_left {
+	float: left;
+	clear: left;
+}
+
+.wdca_right {
+	float: right;
+	clear: right;
+}

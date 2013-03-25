@@ -1,0 +1,25 @@
+@CHARSET "UTF-8";
+
+.wdca_custom_ad {
+	border: 1px dashed #333333;
+	padding: 10px;
+	margin: 0px 0px 10px 0px;
+	overflow: hidden;
+	background: #f6f6f6;
+}
+.wdca_custom_ad h4 {
+	font-weight: bold;
+}
+.wdca_custom_ad a.button, .wdca_custom_ad a:visited .button, .wdca_custom_ad a:hover .button {
+	text-decoration: none;
+	padding: 2px 5px;
+	float: right;
+}
+
+a.wdca_button{
+	background: #333333;
+	padding: 5px;
+	border: 1px solid #111111;
+	color: #ffffff!important;
+	text-shadow: -1px -1px 0px #70800E;
+}

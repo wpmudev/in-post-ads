@@ -1,0 +1,25 @@
+@CHARSET "UTF-8";
+
+.wdca_custom_ad {
+	border:2px dashed #555;
+	padding:10px 15px;
+	margin:10px 0px 20px 0px;
+	overflow:hidden;
+	background:#EEF9FD;
+	clear:both;
+}
+.wdca_custom_ad .wdca_ad_body_full{
+	padding-bottom:10px;
+}
+.wdca_custom_ad a.button,.wdca_custom_ad a:visited .button,.wdca_custom_ad a:hover .button{
+	text-decoration:none;
+	padding:2px 5px;
+	color:#ffffff;
+	float:right;
+}
+.wdca_custom_ad .wdca_stars{
+	background:url(http://wpmu.org/wp-content/themes/wpmuorg_august/images/stars.png);
+	height:30px;
+	width:100px;
+	float:right;
+}

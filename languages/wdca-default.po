@@ -1,0 +1,435 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: In Post Ads\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-11-26 15:47+0100\n"
+"PO-Revision-Date: 2012-11-26 15:47+0100\n"
+"Last-Translator: \n"
+"Language-Team: Incsub\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: D:\\xampp\\htdocs\\wdorg\\wp-content\\plugins\\custom-"
+"ads\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-SearchPath-0: lib\n"
+"X-Poedit-SearchPath-1: lib/forms\n"
+
+#: lib/class_wdca_admin_form_renderer.php:15
+msgid "Yes"
+msgstr ""
+
+#: lib/class_wdca_admin_form_renderer.php:18
+msgid "No"
+msgstr ""
+
+#: lib/class_wdca_admin_form_renderer.php:48
+msgid "Disabling this will only show your ads to logged in users"
+msgstr ""
+
+#: lib/class_wdca_admin_form_renderer.php:49
+msgid "Do NOT turn this on until you are ready to go live"
+msgstr ""
+
+#: lib/class_wdca_admin_form_renderer.php:54
+msgid "This many Ads will be shown per post page"
+msgstr ""
+
+#: lib/class_wdca_admin_form_renderer.php:59
+msgid "Random"
+msgstr ""
+
+#: lib/class_wdca_admin_form_renderer.php:60 lib/class_wdca_admin_pages.php:90
+msgid "Title"
+msgstr ""
+
+#: lib/class_wdca_admin_form_renderer.php:61 lib/class_wdca_admin_pages.php:91
+msgid "Date"
+msgstr ""
+
+#: lib/class_wdca_admin_form_renderer.php:62
+msgid "Modified"
+msgstr ""
+
+#: lib/class_wdca_admin_form_renderer.php:84
+msgid "Your Ads will be ordered in the way you set up here"
+msgstr ""
+
+#: lib/class_wdca_admin_form_renderer.php:89
+msgid "Your first Ad will be injected in your post after this many paragraphs."
+msgstr ""
+
+#: lib/class_wdca_admin_form_renderer.php:93
+msgid ""
+"Your subsequent Ads will be injected in your post every [number] of "
+"paragraphs."
+msgstr ""
+
+#: lib/class_wdca_admin_form_renderer.php:98
+msgid "Before first paragraph:"
+msgstr ""
+
+#: lib/class_wdca_admin_form_renderer.php:101
+msgid ""
+"Enabling this option will insert your first Ad at the very begining of your "
+"post"
+msgstr ""
+
+#: lib/class_wdca_admin_form_renderer.php:104
+msgid "Halway through your post:"
+msgstr ""
+
+#: lib/class_wdca_admin_form_renderer.php:107
+msgid ""
+"Enabling this option will insert an Ad halway through your post your post"
+msgstr ""
+
+#: lib/class_wdca_admin_form_renderer.php:110
+msgid "After last paragraph:"
+msgstr ""
+
+#: lib/class_wdca_admin_form_renderer.php:113
+msgid ""
+"Enabling this option will insert your first Ad at the very end of your post"
+msgstr ""
+
+#: lib/class_wdca_admin_form_renderer.php:119
+msgid "Ignore other injection settings:"
+msgstr ""
+
+#: lib/class_wdca_admin_form_renderer.php:122
+msgid ""
+"Enabling this option will ignore other injection settings and insert your "
+"Ads at the selected predefined settings only"
+msgstr ""
+
+#: lib/class_wdca_admin_form_renderer.php:123
+#, php-format
+msgid "... but only on posts longer than %s paragraphs"
+msgstr ""
+
+#: lib/class_wdca_admin_form_renderer.php:124
+msgid ""
+"If your posts are shorter than the number of paragraphs entered here, the "
+"default behavior will take precedence over the predefined positions "
+"injection."
+msgstr ""
+
+#: lib/class_wdca_admin_form_renderer.php:125
+msgid "Leave the value at <code>0</code> to disable this behavior."
+msgstr ""
+
+#: lib/class_wdca_admin_form_renderer.php:131
+#: lib/class_wdca_admin_pages.php:95
+msgid "Default"
+msgstr ""
+
+#: lib/class_wdca_admin_form_renderer.php:132
+msgid "WPMU.org"
+msgstr ""
+
+#: lib/class_wdca_admin_form_renderer.php:133
+msgid "Dark"
+msgstr ""
+
+#: lib/class_wdca_admin_form_renderer.php:134
+msgid "Dotted"
+msgstr ""
+
+#: lib/class_wdca_admin_form_renderer.php:135
+msgid "Green Button"
+msgstr ""
+
+#: lib/class_wdca_admin_form_renderer.php:148
+msgid "Header text"
+msgstr ""
+
+#: lib/class_wdca_admin_form_renderer.php:148
+msgid "This text will appear in your Ad header, before the link"
+msgstr ""
+
+#: lib/class_wdca_admin_form_renderer.php:149
+msgid "Footer text"
+msgstr ""
+
+#: lib/class_wdca_admin_form_renderer.php:149
+msgid "This text will appear below your Ad content, before the link"
+msgstr ""
+
+#: lib/class_wdca_admin_form_renderer.php:150
+msgid "Footer link text"
+msgstr ""
+
+#: lib/class_wdca_admin_form_renderer.php:150
+msgid "This text will appear as link text in your footer"
+msgstr ""
+
+#: lib/class_wdca_admin_form_renderer.php:157
+msgid ""
+"If you are experiencing problems with your theme, you may want to change the "
+"default selector to something more generic - e.g. <code>p</code>"
+msgstr ""
+
+#: lib/class_wdca_admin_form_renderer.php:158
+msgid ""
+"You can also use this box to allow Ad inserting after other elements too - e."
+"g. <code>ul,ol,p</code>"
+msgstr ""
+
+#: lib/class_wdca_admin_form_renderer.php:179
+msgid ""
+"The plugin will auto-insert Ads into your Posts by default. Select "
+"additional post types here."
+msgstr ""
+
+#: lib/class_wdca_admin_form_renderer.php:180
+msgid ""
+"This setting applies to auto-insertion only - you will still be able to "
+"insert the Ads using shortcodes."
+msgstr ""
+
+#: lib/class_wdca_admin_form_renderer.php:185
+msgid ""
+"Enabling this option will add a metabox to your post editor interface, which "
+"you can use to prevent Ad insertion per post."
+msgstr ""
+
+#: lib/class_wdca_admin_form_renderer.php:213
+msgid "My posts within this Category"
+msgstr ""
+
+#: lib/class_wdca_admin_form_renderer.php:213
+msgid "will only show Ads from these Ad Categories"
+msgstr ""
+
+#: lib/class_wdca_admin_form_renderer.php:217
+msgid ""
+"If you do not set any mappings here, any Ad could appear in any of your "
+"posts."
+msgstr ""
+
+#: lib/class_wdca_admin_form_renderer.php:241
+msgid "Enable lazy dependency loading:"
+msgstr ""
+
+#: lib/class_wdca_admin_form_renderer.php:244
+msgid ""
+"Lazy dependency loading can improve your site load times by requiring "
+"resources as they are needed."
+msgstr ""
+
+#: lib/class_wdca_admin_form_renderer.php:250
+msgid "Lazy loading hook <small>(advanced)</small>:"
+msgstr ""
+
+#: lib/class_wdca_admin_form_renderer.php:252
+msgid ""
+"Lazy dependency loading relies on footer hook to deploy properly. If your "
+"theme does not implement the default hook, use this field to set your custom "
+"one."
+msgstr ""
+
+#: lib/class_wdca_admin_pages.php:43
+msgid "Settings"
+msgstr ""
+
+#: lib/class_wdca_admin_pages.php:50
+msgid "Custom Ads"
+msgstr ""
+
+#: lib/class_wdca_admin_pages.php:51
+msgid "Enable Custom Ads"
+msgstr ""
+
+#: lib/class_wdca_admin_pages.php:52
+msgid "Live mode"
+msgstr ""
+
+#: lib/class_wdca_admin_pages.php:53
+msgid "Show this many Ads"
+msgstr ""
+
+#: lib/class_wdca_admin_pages.php:54
+msgid "Order Ads by"
+msgstr ""
+
+#: lib/class_wdca_admin_pages.php:55
+msgid "Inject first Ad after this many paragraphs"
+msgstr ""
+
+#: lib/class_wdca_admin_pages.php:56
+msgid "Inject subsequent Ads after this many paragraphs each"
+msgstr ""
+
+#: lib/class_wdca_admin_pages.php:57
+msgid "Predefined positions"
+msgstr ""
+
+#: lib/class_wdca_admin_pages.php:59
+msgid "Appearance &amp; messages"
+msgstr ""
+
+#: lib/class_wdca_admin_pages.php:60
+msgid "Theme"
+msgstr ""
+
+#: lib/class_wdca_admin_pages.php:61
+msgid "Messages"
+msgstr ""
+
+#: lib/class_wdca_admin_pages.php:63
+msgid "Advanced"
+msgstr ""
+
+#: lib/class_wdca_admin_pages.php:64
+msgid "Custom post types Ads"
+msgstr ""
+
+#: lib/class_wdca_admin_pages.php:65
+msgid "Show post metabox"
+msgstr ""
+
+#: lib/class_wdca_admin_pages.php:66
+msgid "Connect categories"
+msgstr ""
+
+#: lib/class_wdca_admin_pages.php:67
+msgid "Elements selector"
+msgstr ""
+
+#: lib/class_wdca_admin_pages.php:68
+msgid "Lazy loading"
+msgstr ""
+
+#: lib/class_wdca_admin_pages.php:89
+msgid "Insert Ad"
+msgstr ""
+
+#: lib/class_wdca_admin_pages.php:92
+msgid "Appearance"
+msgstr ""
+
+#: lib/class_wdca_admin_pages.php:93
+msgid "Insert blank placeholder for an ad"
+msgstr ""
+
+#: lib/class_wdca_admin_pages.php:94
+msgid "or select an Ad to insert from the ones listed below"
+msgstr ""
+
+#: lib/class_wdca_admin_pages.php:96
+msgid "Size"
+msgstr ""
+
+#: lib/class_wdca_admin_pages.php:97
+msgid "Small"
+msgstr ""
+
+#: lib/class_wdca_admin_pages.php:98
+msgid "Medium"
+msgstr ""
+
+#: lib/class_wdca_admin_pages.php:99
+msgid "Large"
+msgstr ""
+
+#: lib/class_wdca_admin_pages.php:100
+msgid "Position"
+msgstr ""
+
+#: lib/class_wdca_admin_pages.php:101
+msgid "Left"
+msgstr ""
+
+#: lib/class_wdca_admin_pages.php:102
+msgid "Right"
+msgstr ""
+
+#: lib/class_wdca_admin_pages.php:112 lib/class_wdca_custom_ad.php:38
+msgid "In Post Ads"
+msgstr ""
+
+#: lib/class_wdca_admin_pages.php:130
+msgid "Do not show In Post Ads in this post"
+msgstr ""
+
+#: lib/class_wdca_custom_ad.php:39
+msgid "In Post Ad"
+msgstr ""
+
+#: lib/class_wdca_custom_ad.php:40
+msgid "Add new In Post Ad"
+msgstr ""
+
+#: lib/class_wdca_custom_ad.php:41
+msgid "Edit In Post Ad"
+msgstr ""
+
+#: lib/class_wdca_custom_ad.php:63 lib/class_wdca_custom_ad.php:84
+msgid "Ad Categories"
+msgstr ""
+
+#: lib/class_wdca_custom_ad.php:64
+msgid "Ad Category"
+msgstr ""
+
+#: lib/class_wdca_custom_ad.php:65
+msgid "Add new Ad Category"
+msgstr ""
+
+#: lib/class_wdca_custom_ad.php:66
+msgid "Edit Ad Category"
+msgstr ""
+
+#: lib/class_wdca_custom_ad.php:67
+msgid "Search Ad Categories"
+msgstr ""
+
+#: lib/class_wdca_custom_ad.php:68
+msgid "Popular Ad Categories"
+msgstr ""
+
+#: lib/class_wdca_custom_ad.php:69
+msgid "All Ad Categories"
+msgstr ""
+
+#: lib/class_wdca_custom_ad.php:70
+msgid "Separate Ad Categories with commas"
+msgstr ""
+
+#: lib/class_wdca_custom_ad.php:71
+msgid "Add or remove Ad Categories"
+msgstr ""
+
+#: lib/class_wdca_custom_ad.php:72
+msgid "Choose from most used Ad Categories"
+msgstr ""
+
+#: lib/class_wdca_custom_ad.php:97
+msgid "Ad link"
+msgstr ""
+
+#: lib/class_wdca_custom_ad.php:105
+msgid "Ad appearance"
+msgstr ""
+
+#: lib/class_wdca_custom_ad.php:116
+msgid "Link URL"
+msgstr ""
+
+#: lib/class_wdca_custom_ad.php:130
+msgid "Do not show title"
+msgstr ""
+
+#: lib/class_wdca_custom_ad.php:135
+msgid "Do not show content"
+msgstr ""
+
+#: lib/class_wdca_custom_ad.php:140
+msgid "Do not show footer"
+msgstr ""
+
+#: lib/class_wdca_custom_ad.php:145
+msgid "Strip default style"
+msgstr ""

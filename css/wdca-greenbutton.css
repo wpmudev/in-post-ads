@@ -1,0 +1,36 @@
+@CHARSET "UTF-8";
+
+.wdca_custom_ad {
+	border: 1px solid #cccccc;
+	padding: 10px;
+	margin: 0px 0px 10px 0px;
+	overflow: hidden;
+	background: #f8f8f8;
+}
+.wdca_custom_ad h4 {
+	font-weight: bold;
+}
+.wdca_custom_ad a.button, .wdca_custom_ad a:visited .button, .wdca_custom_ad a:hover .button {
+	text-decoration: none;
+	padding: 2px 5px;
+	float: right;
+}
+
+a.wdca_button{
+	background: #ABC01E;
+	background: -moz-linear-gradient(top,#ABC01E 0%,#809410 100%);
+	background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#ABC01E),color-stop(100%,#809410));
+	background: -webkit-linear-gradient(top,#ABC01E 0%,#809410 100%);
+	background: -o-linear-gradient(top,#ABC01E 0%,#809410 100%);
+	background: -ms-linear-gradient(top,#ABC01E 0%,#809410 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ABC01E',endColorstr='#809410',GradientType=0 );
+	background: linear-gradient(top,#ABC01E 0%,#809410 100%);
+	padding: 0.4em 0.8em;
+	border: 1px solid #70800E;
+	color: #ffffff!important;
+	text-shadow: -1px -1px 0px #70800E;
+	-moz-border-radius: 5px;
+	-khtml-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+}
