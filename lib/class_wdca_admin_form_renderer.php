@@ -162,7 +162,7 @@ class Wdca_AdminFormRenderer {
 			'dark' => __('Dark', 'wdca'),
 			'dotted' => __('Dotted', 'wdca'),
 			'greenbutton' => __('Green Button', 'wdca'),
-			'alex' => __('Alex', 'wdca'),
+			//'alex' => __('Alex', 'wdca'),
 		);
 		$current = $this->_get_option('theme');
 

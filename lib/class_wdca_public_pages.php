@@ -49,8 +49,7 @@ class Wdca_PublicPages {
 		global $post, $wp_current_filter;
 		if (!is_singular()) return $body;
 
-		$selected_types = $this->_data['custom_post_types'];
-		$selected_types = $selected_types ? $selected_types : array();
+		$selected_types = !empty($this->_data['custom_post_types']) ? $this->_data['custom_post_types'] : array();
 		$selected_types[] = 'post';
 		if (!in_array($post->post_type, $selected_types)) return $body;
 		
@@ -69,7 +68,7 @@ class Wdca_PublicPages {
 		if ($ad_time > current_time('timestamp')) return $body;
 
 		$opts = get_option('wdca');
-		$prevent_items = $opts['prevent_items'];
+		$prevent_items = !empty($opts['prevent_items']) ? $opts['prevent_items'] : array();
 		$prevent_items = is_array($prevent_items) ? $prevent_items : array();
 		if (in_array($post->ID, $prevent_items)) return $body;
 

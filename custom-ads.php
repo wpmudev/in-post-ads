@@ -3,7 +3,7 @@
 Plugin Name: In Post Ads
 Plugin URI: http://premium.wpmudev.org/project/in-post-ads
 Description: Adds custom ads post type and manages it on single post pages.
-Version: 1.5-BETA-3
+Version: 1.5-BETA-4
 Author: Incsub
 Author URI: http://premium.wpmudev.org
 WDP ID: 240

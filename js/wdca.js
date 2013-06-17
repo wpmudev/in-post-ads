@@ -14,8 +14,12 @@ if (!$ads_root.length) return false;
 var $parent = $ads_root.parent(),
 	$ps = $parent.find(_wdca.selector),
 	ignore_other = !!_wdca.predefined.ignore_other,
-	allow_predefined = !!(ignore_other && !!($ps.length > _wdca.predefined.ignore_requirement)),
-	allow_default = !!(ignore_other || !allow_predefined)
+	allow_predefined = (
+		!!(ignore_other && !!($ps.length > _wdca.predefined.ignore_requirement))
+		||
+		(_wdca.predefined.before || _wdca.predefined.middle || _wdca.predefined.after)
+	),
+	allow_default = !ignore_other
 ;
 
 if (allow_predefined) {
@@ -24,7 +28,7 @@ if (allow_predefined) {
 	}
 
 	if (_wdca.predefined.middle && $ps.length) {
-		var idx = Math.floor($ps.length / 2)
+		var idx = Math.floor($ps.length / 2),
 			$el = $($ps.get(idx))
 		;
 		if ($el.length) wdca_insert_ad($ads_root, $el, 'after');
@@ -54,9 +58,9 @@ if (allow_default) {
 if (_wdca.ga.enabled && _wdca.ga.category && _wdca.ga.label) {
 	if ("undefined" == typeof _gaq) _gaq = []; // _gaq Global setup
 	$(".wdca_ad_item a").click(function () {
-		_gaq.push(['_trackEvent', _wdca.ga.category, 'Click', _wdca.ga.label])
+		_gaq.push(['_trackEvent', _wdca.ga.category, 'Click', _wdca.ga.label]);
 		return true; // Propagate further up
-	})
+	});
 }
 
 

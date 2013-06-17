@@ -5,7 +5,7 @@
 	$theme_class = @$appearance['strip_class'] ? '' : 'wdca_custom_ad';
 	$appearance_classes = @$appearance['strip_class'] ? '' : $appearance_classes;
 ?>
-<div class="<?php echo $system_classes;?> <?php echo $theme_class;?> <?php echo $appearance_classes;?>" <?php if ($forced) { echo 'data-forced="yes"'; } ?> >
+<div class="<?php echo $system_classes;?> <?php echo $theme_class;?> <?php echo $appearance_classes;?>" <?php if (!empty($forced)) { echo 'data-forced="yes"'; } ?> >
 	<div class="wdca_stars"></div>
 	<?php if (!@$appearance['hide_title']) { ?>
 	<h4><?php echo $msg_header; ?>

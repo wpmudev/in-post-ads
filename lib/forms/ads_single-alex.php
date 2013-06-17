@@ -7,7 +7,7 @@
 	$thumb_id = function_exists('get_post_thumbnail_id') ? get_post_thumbnail_id($ad->ID) : false;
 	$thumbnail = $thumb_id ? wp_get_attachment_image_src($thumb_id, 'thumbnail') : false;
 ?>
-<div class="<?php echo $system_classes;?> <?php echo $theme_class;?> <?php echo $appearance_classes;?>" <?php if ($forced) { echo 'data-forced="yes"'; } ?> >
+<div class="<?php echo $system_classes;?> <?php echo $theme_class;?> <?php echo $appearance_classes;?>" <?php if (!empty($forced)) { echo 'data-forced="yes"'; } ?> >
 	<div class="wdca_ad_info">
 	<?php if (empty($appearance['hide_title'])) { ?>
 		<div class="wdca_ad_featured"><?php echo $msg_header; ?>&raquo;</div>

@@ -197,7 +197,7 @@ class Wdca_CustomAd {
 		// Handle Ad2Post categories
 		global $post;
 		$ad_cat_ids = array();
-		$cats_to_ads = $opts['category_ads'];
+		$cats_to_ads = !empty($opts['category_ads']) ? $opts['category_ads'] : array();
 		$cats_to_ads = is_array($cats_to_ads) ? $cats_to_ads : array();
 		$categories = get_the_category($post->ID);
 		foreach ($categories as $cat) {
@@ -205,7 +205,7 @@ class Wdca_CustomAd {
 		}
 
 		// Ad2Post tags
-		$tags_to_ads = $opts['tag_ads'];
+		$tags_to_ads = !empty($opts['tag_ads']) ? $opts['tag_ads'] : array();
 		$tags_to_ads = is_array($tags_to_ads) ? $tags_to_ads : array();
 		$tags = wp_get_post_tags($post->ID);
 		foreach ($tags as $tag) {
