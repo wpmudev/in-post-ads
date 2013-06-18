@@ -162,6 +162,8 @@ class Wdca_AdminFormRenderer {
 			'dark' => __('Dark', 'wdca'),
 			'dotted' => __('Dotted', 'wdca'),
 			'greenbutton' => __('Green Button', 'wdca'),
+			'wpmu2013' => __('wpmu.org 2013', 'wdca'),
+			'paper' => __('Paper (modern browsers only)', 'wdca'),
 			//'alex' => __('Alex', 'wdca'),
 		);
 		$current = $this->_get_option('theme');
