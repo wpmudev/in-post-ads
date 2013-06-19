@@ -50,7 +50,7 @@ class Wdca_PublicPages {
 		if (!is_singular()) return $body;
 
 		$selected_types = !empty($this->_data['custom_post_types']) ? $this->_data['custom_post_types'] : array();
-		$selected_types[] = 'post';
+		if (empty($this->_data['cpt_skip_posts'])) $selected_types[] = 'post';
 		if (!in_array($post->post_type, $selected_types)) return $body;
 		
 		if (

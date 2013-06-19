@@ -1,6 +1,7 @@
 <?php
 	$link = get_post_meta($ad->ID, 'wdca_plugin_url', true);
 	$link = $link ? $link : '#';
+	if (preg_match('/^www\./', $link)) $link = esc_url($link);
 	$appearance = get_post_meta($ad->ID, 'wdca_appearance', true);
 	$theme_class = @$appearance['strip_class'] ? '' : 'wdca_custom_ad';
 	$appearance_classes = @$appearance['strip_class'] ? '' : $appearance_classes;
@@ -18,6 +19,10 @@
 	</div>
 	<?php } ?>
 	<?php if (!@$appearance['hide_footer']) { ?>
-	<?php echo $msg_footer; ?><a href="<?php echo $link;?>" <?php echo $link_target; ?> class="wdca_read_more button wdca_button"><span><?php echo $msg_link;?></span></a>
-	<?php } ?>
+	<?php 
+		echo $msg_footer; 
+		if (!empty($msg_link)) { 
+			?><a href="<?php echo $link;?>" <?php echo $link_target; ?> class="wdca_read_more button wdca_button"><span><?php echo $msg_link;?></span></a><?php 
+		}
+	} ?>
 </div>

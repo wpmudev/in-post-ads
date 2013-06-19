@@ -133,7 +133,7 @@ class Wdca_AdminFormRenderer {
 			__('Halway through your post:', 'wdca') .
 			'&nbsp;' .
 			$this->_create_checkbox('predefined_halfway_through') .
-			'<div><small>' . __('Enabling this option will insert an Ad halway through your post your post', 'wdca') . '</small></div>' .
+			'<div><small>' . __('Enabling this option will insert an Ad halway through your post', 'wdca') . '</small></div>' .
 		'<br />';
 		echo '' .
 			__('After last paragraph:', 'wdca') .
@@ -247,7 +247,13 @@ class Wdca_AdminFormRenderer {
 		}
 		echo '</select>';
 		echo '<div><small>' . __('The plugin will auto-insert Ads into your Posts by default. Select additional post types here.', 'wdca') . '</small></div>';
-		echo '<div><small>' . __('This setting applies to auto-insertion only - you will still be able to insert the Ads using shortcodes.', 'wdca') . '</small></div>';
+
+		echo '' .
+			'<label for="cpt_skip_posts-yes">' . __('Do not auto-inject into posts:', 'wdca') . '</label>&nbsp;' .
+			$this->_create_checkbox('cpt_skip_posts') .
+		'';
+
+		echo '<div><small>' . __('These settings apply to auto-insertion only - you will still be able to insert the Ads using shortcodes.', 'wdca') . '</small></div>';
 	}
 
 	function create_post_metabox_box () {
