@@ -61,4 +61,4 @@ a.wdca_read_more, a.wdca_button {
 	background-image: linear-gradient(bottom,rgb(63, 203, 255) 0%,rgb(102, 214, 255) 100%);
 }
 
-
+p.wdca_footer { font-size:0.9em; padding-top:2em; opacity: 0.8; margin-bottom: 0;}

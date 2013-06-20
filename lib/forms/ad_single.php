@@ -20,9 +20,9 @@
 	<?php } ?>
 	<?php if (!@$appearance['hide_footer']) { ?>
 	<?php 
-		echo $msg_footer; 
 		if (!empty($msg_link)) { 
 			?><a href="<?php echo $link;?>" <?php echo $link_target; ?> class="wdca_read_more button wdca_button"><span><?php echo $msg_link;?></span></a><?php 
 		}
+		echo "<p class='wdca_footer'>" . $msg_footer . "</p>"; 
 	} ?>
 </div>
