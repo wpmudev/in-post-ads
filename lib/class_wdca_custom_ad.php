@@ -25,6 +25,22 @@ class Wdca_CustomAd {
 
 		add_filter("manage_edit-" . self::POST_TYPE . "_columns", array($me, "add_custom_columns"));
 		add_action("manage_posts_custom_column",  array($me, "fill_custom_columns"));
+
+		$stylesheet_type = !empty($me->_data['style_inclusion_type']) ? $me->_data['style_inclusion_type'] : '';
+		if ('dynamic' == $stylesheet_type) {
+			$pfx = self::wrap('get_styles');
+			add_action("wp_ajax_{$pfx}", array($me, 'json_load_styles'));
+			add_action("wp_ajax_nopriv_{$pfx}", array($me, 'json_load_styles'));
+		}
+
+		add_filter('wdca_the_content', 'capital_P_dangit', 11);
+		add_filter('wdca_the_content', 'wptexturize');
+		add_filter('wdca_the_content', 'convert_smilies');
+		add_filter('wdca_the_content', 'convert_chars');
+		add_filter('wdca_the_content', 'wpautop');
+		add_filter('wdca_the_content', 'shortcode_unautop');
+		add_filter('wdca_the_content', 'prepend_attachment');
+		add_filter('wdca_the_content', 'do_shortcode');
 	}
 
 	public static function get_instance () {
@@ -237,7 +253,7 @@ class Wdca_CustomAd {
 
 	private static function pull_add_from_cache () {
 		if (!self::$_cache) self::populate_cache();
-		$ad = array_pop(self::$_cache);
+		$ad = is_array(self::$_cache) ? array_pop(self::$_cache) : false;
 		return $ad;
 	}
 
@@ -257,7 +273,9 @@ class Wdca_CustomAd {
 		if (defined('WDCA_FLAG_JAVASCRIPT_LOADED')) return false;
 
 		wp_enqueue_script('jquery');
-		wp_enqueue_script('wdca', WDCA_PLUGIN_URL . '/js/wdca.js');
+		wp_enqueue_script('wdca', WDCA_PLUGIN_URL . '/js/wdca.js', array('jquery'), '1.5.1');
+
+		$stylesheet_type = !empty($this->_data['style_inclusion_type']) ? $this->_data['style_inclusion_type'] : '';
 
 		$wdca_data = array(
 			"first_ad" => (!empty($this->_data['p_first_count']) ? (int)$this->_data['p_first_count'] : 0),
@@ -275,6 +293,10 @@ class Wdca_CustomAd {
 				"category" => (!empty($this->_data['ga_category']) ? esc_js($this->_data['ga_category']) : ''),
 				"label" => (!empty($this->_data['ga_label']) ? esc_js($this->_data['ga_label']) : ''),
 			),
+			"non_indexing_wrapper" => (defined('WDCA_FLAG_FORCE_NON_INDEXING_WRAPPER') && WDCA_FLAG_FORCE_NON_INDEXING_WRAPPER),
+			"pfx" => self::wrap(''),
+			"dynamic_styles" => ('dynamic' == $stylesheet_type),
+			"ajax_url" => admin_url('admin-ajax.php'),
 		);
 		echo '<script type="text/javascript">var _wdca=' . json_encode($wdca_data) . ';</script>';
 
@@ -286,12 +308,50 @@ class Wdca_CustomAd {
 
 		$theme = @$this->_data['theme'];
 		$theme = $theme ? $theme : 'default';
+
+		$stylesheet_type = !empty($this->_data['style_inclusion_type']) ? $this->_data['style_inclusion_type'] : '';
+
 		if (!current_theme_supports('wdca')) {
-			wp_enqueue_style('wdca', WDCA_PLUGIN_URL . "/css/wdca.css");
+			if (empty($stylesheet_type)) wp_enqueue_style('wdca', WDCA_PLUGIN_URL . "/css/wdca.css");
+			else if ('dynamic' != $stylesheet_type) add_action($this->get_late_binding_hook(), array($this, 'inject_inline_styles'), 99);
+
 			if (!file_exists(WDCA_PLUGIN_BASE_DIR . "/css/wdca-{$theme}.css")) return false;
-			wp_enqueue_style('wdca-theme', WDCA_PLUGIN_URL . "/css/wdca-{$theme}.css");
+
+			if (empty($stylesheet_type)) wp_enqueue_style('wdca-theme', WDCA_PLUGIN_URL . "/css/wdca-{$theme}.css");
+			else if ('dynamic' != $stylesheet_type) add_action($this->get_late_binding_hook(), array($this, 'inject_inline_styles'), 99);
 		}
 		define('WDCA_FLAG_STYLESHEET_LOADED', true, true);
+	}
+
+	private function _get_processed_styles () {
+		$theme = !empty($this->_data['theme'])
+			? $this->_data['theme']
+			: 'default'
+		;
+		$theme = preg_replace('/[^-_a-z0-9]/i', '', $theme);
+		$file = !empty($theme)
+			? WDCA_PLUGIN_BASE_DIR . "/css/wdca-{$theme}.css"
+			: WDCA_PLUGIN_BASE_DIR . "/css/wdca.css"
+		;
+		if (!file_exists($file)) return false;
+		$style = file_get_contents($file);
+		if (empty($style)) return false;
+
+		$pfx = self::wrap('');
+		$style = preg_replace('/wdca_/', $pfx, $style);
+		return $style;
+	}
+
+	public function inject_inline_styles () {
+		$style = $this->_get_processed_styles();
+		if (!empty($style)) echo "<style type='text/css'>{$style}</style>";
+	}
+
+	public function json_load_styles () {
+		$style = $this->_get_processed_styles();
+		wp_send_json(array(
+			'style' => $style,
+		));
 	}
 
 	public function get_late_binding_hook () {
@@ -318,5 +378,20 @@ class Wdca_CustomAd {
 		add_action($hook, array($this, 'include_frontend_javascript'), 19);
 
 		define('WDCA_FLAG_LATE_INCLUSION_BOUND', true, true);
+	}
+
+	public static function get_root_prefix () {
+		$data = Wdca_Data::get_options();
+		if (empty($data['style_inclusion_type'])) return 'wdca';
+
+		$full = md5(home_url() . COOKIEHASH);
+		$idx = substr(preg_replace('/\D/', '', $full), 0, 1);
+		$letters = range('a', 'z');
+		if (!preg_match('/^[a-z]/i', $full)) $full = $letters[$idx] . $full;
+		return substr($full, 0, 5);
+	}
+
+	public static function wrap ($str) {
+		return self::get_root_prefix() . "_{$str}";
 	}
 }

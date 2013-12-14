@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: In Post Ads\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-06-19 15:03+0100\n"
-"PO-Revision-Date: 2013-06-19 15:03+0100\n"
+"POT-Creation-Date: 2013-12-14 16:25+0100\n"
+"PO-Revision-Date: 2013-12-14 16:25+0100\n"
 "Last-Translator: \n"
 "Language-Team: Incsub\n"
 "MIME-Version: 1.0\n"
@@ -287,20 +287,36 @@ msgid ""
 "one."
 msgstr ""
 
-#: lib/class_wdca_admin_form_renderer.php:387
+#: lib/class_wdca_admin_form_renderer.php:383
+msgid "Style inclusion type"
+msgstr ""
+
+#: lib/class_wdca_admin_form_renderer.php:384
+msgid "Normal"
+msgstr ""
+
+#: lib/class_wdca_admin_form_renderer.php:385
+msgid "Inline"
+msgstr ""
+
+#: lib/class_wdca_admin_form_renderer.php:386
+msgid "Dynamic"
+msgstr ""
+
+#: lib/class_wdca_admin_form_renderer.php:393
 msgid ""
 "This is where you can set up your A/B testing, and settings group loading "
 "rules."
 msgstr ""
 
-#: lib/class_wdca_admin_form_renderer.php:394
+#: lib/class_wdca_admin_form_renderer.php:400
 msgid ""
 "By default, A/B mode distribution is random. Enabling this option will "
 "enforce initially selected mode for your users to persist accross requests "
 "(i.e. users that got A mode settings will keep seeing them, and vice versa)."
 msgstr ""
 
-#: lib/class_wdca_admin_form_renderer.php:409
+#: lib/class_wdca_admin_form_renderer.php:415
 msgid ""
 "If A/B testing is enabled, allowing this option will let you test each group "
 "unconditionally, by passing this to your URL: <code>?wdca_mode=a</code> for "
@@ -487,7 +503,7 @@ msgstr ""
 msgid "Right"
 msgstr ""
 
-#: lib/class_wdca_admin_pages.php:168 lib/class_wdca_custom_ad.php:38
+#: lib/class_wdca_admin_pages.php:168 lib/class_wdca_custom_ad.php:54
 msgid "In Post Ads"
 msgstr ""
 
@@ -495,82 +511,82 @@ msgstr ""
 msgid "Do not show In Post Ads in this post"
 msgstr ""
 
-#: lib/class_wdca_custom_ad.php:39
+#: lib/class_wdca_custom_ad.php:55
 msgid "In Post Ad"
 msgstr ""
 
-#: lib/class_wdca_custom_ad.php:40
+#: lib/class_wdca_custom_ad.php:56
 msgid "Add new In Post Ad"
 msgstr ""
 
-#: lib/class_wdca_custom_ad.php:41
+#: lib/class_wdca_custom_ad.php:57
 msgid "Edit In Post Ad"
 msgstr ""
 
-#: lib/class_wdca_custom_ad.php:63 lib/class_wdca_custom_ad.php:84
+#: lib/class_wdca_custom_ad.php:79 lib/class_wdca_custom_ad.php:100
 msgid "Ad Categories"
 msgstr ""
 
-#: lib/class_wdca_custom_ad.php:64
+#: lib/class_wdca_custom_ad.php:80
 msgid "Ad Category"
 msgstr ""
 
-#: lib/class_wdca_custom_ad.php:65
+#: lib/class_wdca_custom_ad.php:81
 msgid "Add new Ad Category"
 msgstr ""
 
-#: lib/class_wdca_custom_ad.php:66
+#: lib/class_wdca_custom_ad.php:82
 msgid "Edit Ad Category"
 msgstr ""
 
-#: lib/class_wdca_custom_ad.php:67
+#: lib/class_wdca_custom_ad.php:83
 msgid "Search Ad Categories"
 msgstr ""
 
-#: lib/class_wdca_custom_ad.php:68
+#: lib/class_wdca_custom_ad.php:84
 msgid "Popular Ad Categories"
 msgstr ""
 
-#: lib/class_wdca_custom_ad.php:69
+#: lib/class_wdca_custom_ad.php:85
 msgid "All Ad Categories"
 msgstr ""
 
-#: lib/class_wdca_custom_ad.php:70
+#: lib/class_wdca_custom_ad.php:86
 msgid "Separate Ad Categories with commas"
 msgstr ""
 
-#: lib/class_wdca_custom_ad.php:71
+#: lib/class_wdca_custom_ad.php:87
 msgid "Add or remove Ad Categories"
 msgstr ""
 
-#: lib/class_wdca_custom_ad.php:72
+#: lib/class_wdca_custom_ad.php:88
 msgid "Choose from most used Ad Categories"
 msgstr ""
 
-#: lib/class_wdca_custom_ad.php:97
+#: lib/class_wdca_custom_ad.php:113
 msgid "Ad link"
 msgstr ""
 
-#: lib/class_wdca_custom_ad.php:105
+#: lib/class_wdca_custom_ad.php:121
 msgid "Ad appearance"
 msgstr ""
 
-#: lib/class_wdca_custom_ad.php:116
+#: lib/class_wdca_custom_ad.php:132
 msgid "Link URL"
 msgstr ""
 
-#: lib/class_wdca_custom_ad.php:130
+#: lib/class_wdca_custom_ad.php:146
 msgid "Do not show title"
 msgstr ""
 
-#: lib/class_wdca_custom_ad.php:135
+#: lib/class_wdca_custom_ad.php:151
 msgid "Do not show content"
 msgstr ""
 
-#: lib/class_wdca_custom_ad.php:140
+#: lib/class_wdca_custom_ad.php:156
 msgid "Do not show footer"
 msgstr ""
 
-#: lib/class_wdca_custom_ad.php:145
+#: lib/class_wdca_custom_ad.php:161
 msgid "Strip default style"
 msgstr ""

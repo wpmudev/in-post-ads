@@ -379,6 +379,12 @@ EOMappingJs;
 			'<input type="text" name="' . $this->_mode_prefix . '[late_binding_hook]" id="wdca-late_binding_hook" value="' . $hook . '" />' .
 			'<div><small>' . __('Lazy dependency loading relies on footer hook to deploy properly. If your theme does not implement the default hook, use this field to set your custom one.', 'wdca') . '</small></div>'
 		;
+
+		echo '<h4>' . __('Style inclusion type', 'wdca') . '</h4>' .
+			$this->_create_radiobox('style_inclusion_type', '') . '&nbsp;<label for="style_inclusion_type-">' . __('Normal', 'wdca') . '</label><br />' .
+			$this->_create_radiobox('style_inclusion_type', 'inline') . '&nbsp;<label for="style_inclusion_type-inline">' . __('Inline', 'wdca') . '</label><br />' .
+			$this->_create_radiobox('style_inclusion_type', 'dynamic') . '&nbsp;<label for="style_inclusion_type-dynamic">' . __('Dynamic', 'wdca') . '</label><br />' .
+		'';
 	}
 
 
