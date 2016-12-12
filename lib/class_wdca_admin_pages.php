@@ -4,18 +4,14 @@
  */
 class Wdca_AdminPages {
 
-	function Wdca_AdminPages () { $this->__construct(); }
-
-	function __construct () {
-
-	}
+	function __construct () {}
 
 	/**
 	 * Main entry point.
 	 *
 	 * @static
 	 */
-	function serve () {
+	public static function serve () {
 		$me = new Wdca_AdminPages;
 		$me->add_hooks();
 	}
