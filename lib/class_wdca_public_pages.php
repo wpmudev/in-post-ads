@@ -34,7 +34,7 @@ class Wdca_PublicPages {
 		if (!is_singular()) return false;
 		$this->_wdca->include_frontend_javascript();
 	}
-	
+
 	/**
 	 * Loads css dependencies.
 	 */
@@ -52,7 +52,7 @@ class Wdca_PublicPages {
 		$selected_types = !empty($this->_data['custom_post_types']) ? $this->_data['custom_post_types'] : array();
 		if (empty($this->_data['cpt_skip_posts'])) $selected_types[] = 'post';
 		if (!in_array($post->post_type, $selected_types)) return $body;
-		
+
 		if (
 			@in_array('get_the_excerpt', $wp_current_filter)
 			||

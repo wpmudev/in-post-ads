@@ -184,14 +184,16 @@ class Wdca_AdminPages {
 
 	function save_meta () {
 		global $post;
+
 		$post_id = wp_is_post_revision($post);
-		$post_id = $post_id ? $post_id : $post->ID;
+		$post_id = $post_id ? $post_id : (is_object($post) ? $post->ID : false);
+		if (empty($post_id)) return false;
 
 		$opts = get_option('wdca');
 		$opts = $opts ? $opts : array();
 		$opts['prevent_items'] = @$opts['prevent_items'] ? $opts['prevent_items'] : array();
 
-		if (@$_POST['wdca_hide_box']) {
+		if (isset($_POST['wdca_hide_box'])) {
 			$opts['prevent_items'][] = $post_id;
 		} else {
 			$key = array_search($post_id, $opts['prevent_items']);
