@@ -8,8 +8,6 @@ class Wdca_PublicPages {
 	private $_codec;
 	private $_wdca;
 
-	function Wdca_PublicPages () { $this->__construct(); }
-
 	function __construct () {
 		$this->_data = Wdca_Data::get_options();//get_option('wdca');
 		$this->_codec = new Wdca_Codec;
