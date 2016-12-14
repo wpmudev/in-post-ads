@@ -228,5 +228,20 @@ class Wdca_AdminPages {
 		add_action('admin_print_scripts-post-new.php', array($this, 'js_editor_button'));
 
 		add_action('wp_ajax_wdca_list_ads', array($this, 'json_list_ads'));
+
+		// Dashboard
+		if (file_exists(WDCA_PLUGIN_BASE_DIR . '/dash-notice/wpmudev-dash-notification.php')) {
+			global $wpmudev_notices;
+			$wpmudev_notices[] = array(
+				'id' => 240,
+				'name' => 'In Post Ads',
+				'screens' => array(
+					'wdca_custom_ad_page_wdca',
+					'wdca_custom_ad_page_wdca-ab',
+				),
+			);
+
+			require_once(WDCA_PLUGIN_BASE_DIR . '/dash-notice/wpmudev-dash-notification.php');
+		}
 	}
 }
