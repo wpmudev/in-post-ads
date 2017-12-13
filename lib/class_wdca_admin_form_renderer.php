@@ -270,99 +270,114 @@ class Wdca_AdminFormRenderer {
 
 		$ad_str = $cat_str = '';
 
-		$cat_str = '<select id="wdca_categories">';
-		$cat_str .= "<option value=''></option>";
-		foreach ($categories as $cat) {
-			$cat_str .= "<option value='{$cat->term_id}'>{$cat->name}</option>";
-			$ad_str .= "<div class='wdca_ads_to_cat' id='wdca_ads_to-cat-{$cat->term_id}' style='display:none'>";
-			foreach ($ad_terms as $ad) {
-				$checked = isset($cats_to_ads[$cat->term_id][$ad->term_id]) ? 'checked="checked"' : '';
-				$ad_str .= "<input type='checkbox' name='{$this->_mode_prefix}[category_ads][{$cat->term_id}][{$ad->term_id}]' id='wdca_ad_to_cat_item-{$cat->term_id}-{$ad->term_id}' value='{$ad->term_id}' {$checked} />";
-				$ad_str .= " <label for='wdca_ad_to_cat_item-{$cat->term_id}-{$ad->term_id}'>{$ad->name}</label><br />";
+		if( ! empty( $categories ) ){
+
+			foreach ($categories as $cat) {
+
+				$cat_str .= '<tr id="wdca-category-options-' . $cat->term_id . '">';
+
+					$cat_str .= '<td style="vertical-align:top;">';
+						$cat_str .= '<span>' . $cat->name . '</span>';
+					$cat_str .= '</td>';
+
+
+					$cat_str .= '<td>';
+					foreach( $ad_terms as $ad ){
+
+						$ads_ids = isset( $cats_to_ads[ $cat->term_id ] ) ? $cats_to_ads[ $cat->term_id ] : array();
+						$checked = ( in_array( $ad->term_id, $ads_ids ) ) ? 'checked="checked"' : '';
+						$cat_str .= '<div>';
+							$cat_str .= '<label>';								
+								$cat_str .= '<input type="checkbox" name="' . $this->_mode_prefix . '[category_ads][' . $cat->term_id . '][' . $ad->term_id . ']" value="' . $ad->term_id . '" '. $checked .' />';
+								$cat_str .= $ad->name;
+							$cat_str .= '</label>';
+						$cat_str .= '</div>';
+
+					}
+					$cat_str .= '</td>';
+
+				$cat_str .= '</tr>';
+
 			}
-			$ad_str .= '</div>';
+
 		}
-		$cat_str .= '</select>';
 
-		//echo $cat_str . $ad_str;
-		echo '<table class="widefat">';
-		echo '<thead><tr><th>' . __('My posts within this Category', 'wdca') . '&hellip;</th><th>&hellip;' . __('will only show Ads from these Ad Categories', 'wdca') . '</th></tr></thead>';
-		echo '<tfoot><tr><th></th><th></th></tr></tfoot>';
-		echo "<tbody><tr><td>{$cat_str}</td><td>{$ad_str}</td></tr></tbody>";
-		echo '</table>';
+		echo '<div style="display:block; max-height: 300px; overflow:hidden; overflow-y: scroll;">';
+
+			echo '<table class="widefat">';
+				echo '<thead>
+						<tr>
+							<th>' . __('My posts within this Category', 'wdca') . '&hellip;</th>
+							<th>&hellip;' . __('will only show Ads from these Ad Categories', 'wdca') . '</th>
+						</tr>
+					</thead>';
+				echo '<tfoot><tr><th></th><th></th></tr></tfoot>';
+				echo "<tbody><tr><td>{$cat_str}</td><td>{$ad_str}</td></tr></tbody>";
+			echo '</table>';
+
+		echo '</div>';
 		_e('If you do not set any mappings here, any Ad could appear in any of your posts.', 'wdca');
-		echo <<<EOMappingJs
-<script type="text/javascript">
-(function ($) {
-$(function () {
-
-function toggle_ads_to_cats () {
-	var cat = $("#wdca_categories").val();
-	var root = $("#wdca_ads_to-cat-" + cat);
-	if (!root.length) return false;
-	$(".wdca_ads_to_cat").hide();
-	root.show();
-}
-
-$("#wdca_categories").change(toggle_ads_to_cats);
-toggle_ads_to_cats();
-
-});
-})(jQuery);
-</script>
-EOMappingJs;
 	}
 
 	function create_tags_box () {
 		$tags = apply_filters('wdca-settings-tags_list', get_terms('post_tag', array('orderby'=>'term_group', 'hide_empty' => false)));
 		$ad_terms = get_terms('wdca_ad_categories', array('orderby'=>'term_group', 'hide_empty' => false));
 
-		$tags_to_ads = $this->_get_option('tag_ads');
-		$tags_to_ads = is_array($tags_to_ads) ? $tags_to_ads : array();
+		$cats_to_ads = $this->_get_option('category_ads');
+		$cats_to_ads = is_array($cats_to_ads) ? $cats_to_ads : array();
 
-		$ad_str = $tag_str = '';
+		$ad_str = $cat_str = '';
 
-		$tag_str = '<select id="wdca_tags">';
-		$tag_str .= "<option value=''></option>";
-		foreach ($tags as $tag) {
-			$tag_str .= "<option value='{$tag->term_id}'>{$tag->name}</option>";
-			$ad_str .= "<div class='wdca_ads_to_tag' id='wdca_ads_to-tag-{$tag->term_id}' style='display:none'>";
-			foreach ($ad_terms as $ad) {
-				$checked = isset($tags_to_ads[$tag->term_id][$ad->term_id]) ? 'checked="checked"' : '';
-				$ad_str .= "<input type='checkbox' name='{$this->_mode_prefix}[tag_ads][{$tag->term_id}][{$ad->term_id}]' id='wdca_ad_to_cat_item-{$tag->term_id}-{$ad->term_id}' value='{$ad->term_id}' {$checked} />";
-				$ad_str .= " <label for='wdca_ad_to_tag_item-{$tag->term_id}-{$ad->term_id}'>{$ad->name}</label><br />";
+		if( ! empty( $tags ) ){
+
+			foreach ($tags as $term) {
+
+				$cat_str .= '<tr id="wdca-category-options-' . $term->term_id . '">';
+
+					$cat_str .= '<td style="vertical-align:top;">';
+						$cat_str .= '<span>' . $term->name . '</span>';
+					$cat_str .= '</td>';
+
+
+					$cat_str .= '<td>';
+					foreach( $ad_terms as $ad ){
+
+						$ads_ids = isset( $cats_to_ads[ $term->term_id ] ) ? $cats_to_ads[ $term->term_id ] : array();
+						$checked = ( in_array( $ad->term_id, $ads_ids ) ) ? 'checked="checked"' : '';
+						$cat_str .= '<div>';
+							$cat_str .= '<label>';								
+								$cat_str .= '<input type="checkbox" name="' . $this->_mode_prefix . '[category_ads][' . $term->term_id . '][' . $ad->term_id . ']" value="' . $ad->term_id . '" '. $checked .' />';
+								$cat_str .= $ad->name;
+							$cat_str .= '</label>';
+						$cat_str .= '</div>';
+
+					}
+					$cat_str .= '</td>';
+
+				$cat_str .= '</tr>';
+
 			}
-			$ad_str .= '</div>';
+
 		}
-		$tag_str .= '</select>';
+
 
 		//echo $cat_str . $ad_str;
-		echo '<table class="widefat">';
-		echo '<thead><tr><th>' . __('My posts within this Tag', 'wdca') . '&hellip;</th><th>&hellip;' . __('will only show Ads from these Ad Categories', 'wdca') . '</th></tr></thead>';
-		echo '<tfoot><tr><th></th><th></th></tr></tfoot>';
-		echo "<tbody><tr><td>{$tag_str}</td><td>{$ad_str}</td></tr></tbody>";
-		echo '</table>';
+		echo '<div style="display:block; max-height: 300px; overflow:hidden; overflow-y: scroll;">';
+
+			echo '<table class="widefat">';
+				echo '<thead>
+						<tr>
+							<th>' . __('My posts within this Tag', 'wdca') . '&hellip;</th>
+							<th>&hellip;' . __('will only show Ads from these Ad Categories', 'wdca') . '</th>
+						</tr>
+					</thead>';
+				echo '<tfoot><tr><th></th><th></th></tr></tfoot>';
+				echo "<tbody>{$cat_str}</tbody>";
+				echo '</table>';
+
+		echo '</div>';
+
 		_e('If you do not set any mappings here, any Ad could appear in any of your posts.', 'wdca');
-		echo <<<EOMappingJs
-<script type="text/javascript">
-(function ($) {
-$(function () {
-
-function toggle_ads_to_tags () {
-	var tag = $("#wdca_tags").val();
-	var root = $("#wdca_ads_to-tag-" + tag);
-	if (!root.length) return false;
-	$(".wdca_ads_to_tag").hide();
-	root.show();
-}
-
-$("#wdca_tags").change(toggle_ads_to_tags);
-toggle_ads_to_tags();
-
-});
-})(jQuery);
-</script>
-EOMappingJs;
 	}
 
 	function create_lazy_loading_box () {
