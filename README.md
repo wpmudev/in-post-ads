@@ -38,7 +38,7 @@ Generate more revenue and increase sales by automatically inserting ads into you
 
 ## Usage
 
-Start by reading [Installing plugins](https://premium.wpmudev.org/wpmu-manual/installing-regular-plugins-on-wpmu/) section in our comprehensive [WordPress and WordPress Multisite Manual](https://premium.wpmudev.org/wpmu-manual/) if you are new to WordPress.
+Start by reading [Installing plugins](https://wpmudev.com/docs/using-wordpress/installing-wordpress-plugins/) section in our comprehensive [WordPress and WordPress Multisite Manual](https://wpmudev.com/docs/using-wordpress/wordpress-multisite) if you are new to WordPress.
 
 ### **To Install:**
 
